@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -22,12 +23,18 @@ import PoliticaDeCookies from "./pages/politica-de-cookies";
 
 const queryClient = new QueryClient();
 
+// Determina se estamos no GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+
+// Escolhe o Router apropriado com base no ambiente
+const Router = isGitHubPages ? HashRouter : BrowserRouter;
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/cadastro" element={<Cadastro />} />
@@ -35,7 +42,7 @@ const App = () => (
           <Route path="/cadastro-sucesso" element={<CadastroSucesso />} />
           <Route path="/precos" element={<Precos />} />
           <Route path="/faq" element={<FAQ />} />
-      <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/termos-de-uso" element={<TermosDeUso />} />
           <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
@@ -43,7 +50,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </TooltipProvider>
   </QueryClientProvider>
 );
