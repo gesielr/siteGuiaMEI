@@ -15,7 +15,7 @@ const FAQ = () => {
     },
     {
       question: "Quanto tempo leva para emitir uma nota fiscal?",
-      answer: "O processo costuma ser muito rápido. Em condições normais, suas notas são emitidas em até 15 minutos após o envio de todas as informações necessárias. Nos horários de pico pode levar até 1 hora."
+      answer: "O processo costuma ser muito rápido. Em condições normais, suas notas são emitidas em até 1 minuto após o envio de todas as informações necessárias. Nos horários de pico pode levar até 5 minutos."
     },
     {
       question: "É seguro fornecer meus dados pelo WhatsApp?",
