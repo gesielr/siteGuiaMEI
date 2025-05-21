@@ -27,6 +27,8 @@ const queryClient = new QueryClient();
 const isGitHubPages = window.location.hostname.includes('github.io');
 
 // Escolhe o Router apropriado com base no ambiente
+// No GitHub Pages, usamos HashRouter para evitar problemas de roteamento
+// Em ambiente local, usamos BrowserRouter para URLs mais limpas
 const Router = isGitHubPages ? HashRouter : BrowserRouter;
 
 const App = () => (

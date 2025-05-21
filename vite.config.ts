@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/siteGuiaMEI/',
+  // Use base path '/siteGuiaMEI/' apenas para produção (GitHub Pages)
+  // Em desenvolvimento, use '/' para evitar problemas de roteamento
+  base: mode === 'production' ? '/siteGuiaMEI/' : '/',
   server: {
     host: "::",
     port: 8080,

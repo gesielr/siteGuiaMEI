@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-[463px] h-[645px] rounded-xl overflow-hidden shadow-2xl">
                 <img
-                  src={`${basePath}/images/foto-celular.JPG`}
+                  src={`${basePath}/foto-celular.JPG`}
                   alt="Emissão de notas fiscais pelo WhatsApp"
                   className="w-[463px] h-[645px] object-cover"
                 />

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -15,7 +16,7 @@ const FAQ = () => {
     },
     {
       question: "Quanto tempo leva para emitir uma nota fiscal?",
-      answer: "O processo costuma ser muito rápido. Em condições normais, suas notas são emitidas em até 1 minuto após o envio de todas as informações necessárias. Nos horários de pico pode levar até 5 minutos."
+      answer: "O processo costuma ser muito rápido. Em condições normais, suas notas são emitidas em até 15 minutos após o envio de todas as informações necessárias. Nos horários de pico pode levar até 1 hora."
     },
     {
       question: "É seguro fornecer meus dados pelo WhatsApp?",
@@ -86,7 +87,7 @@ const FAQ = () => {
             </p>
             <div className="flex justify-center space-x-4">
               <Button variant="outline" asChild>
-                <a href="/contato">Formulário de Contato</a>
+                <Link to="/contato">Formulário de Contato</Link>
               </Button>
               <Button asChild>
                 <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
