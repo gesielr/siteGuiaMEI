@@ -1,7 +1,11 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+
+// Determina se estamos no GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+// Define o caminho base correto para as imagens
+const basePath = isGitHubPages ? '/siteGuiaMEI' : '';
 
 const Hero = () => {
   return (
@@ -49,7 +53,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-[463px] h-[645px] rounded-xl overflow-hidden shadow-2xl">
                 <img
-                  src="src/images/foto-celular.JPG"
+                  src={`${basePath}/images/foto-celular.JPG`}
                   alt="Emissão de notas fiscais pelo WhatsApp"
                   className="w-[463px] h-[645px] object-cover"
                 />
